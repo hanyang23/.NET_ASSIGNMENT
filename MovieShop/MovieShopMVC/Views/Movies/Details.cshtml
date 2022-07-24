@@ -1,8 +1,93 @@
 ﻿@model ApplicationCore.Models.MovieDetailsModel
 
-<h1>
-   @Model.Title
-</h1>
-<h3>
-    @Model.Overview
-</h3>
+
+
+@{
+    ViewData["Title"] = "Movie details";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/movie.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="row">
+        <div id="col">
+            <div class="col">
+              <a href="https://image.tmdb.org/t/p/w342//9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg">
+              <img alt="Qries" src="https://image.tmdb.org/t/p/w342//9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg"
+              width=200" height="300"></a>
+            </div>
+          
+            <div class="col">
+                <h1>MovieTitle</h1>
+            </div>
+
+            <div class="col">
+                <button type="button" class="btn btn-primary">
+                    <h4><span class="badge rounded-pill bg-secondary">Genres1</span></h4>
+                </button>
+
+                <button type="button" class="btn btn-primary">
+                    <h4><span class="badge rounded-pill bg-secondary">Genres2</span></h4>
+                </button>
+
+                <button type="button" class="btn btn-primary">
+                    <h4><span class="badge rounded-pill bg-secondary">Genres3</span></h4>
+                </button>
+            </div>
+
+            <div class="col">
+                <button type="button" class="btn btn-primary">
+                    <h4><span class="badge rounded-pill bg-secondary">Rating</span></h4>
+                </button>
+            </div>
+
+            <div class="col">
+                <p>
+                    Dom Cobb, a skilled thief who commits corporate espionage by infiltrating the subconscious of his targets, is offered a chance to regain his old life as payment for a task considered to be impossible: "inception", the implantation of another person's idea into a target's subconscious.
+                </p>
+            </div>
+
+            <div class="col">
+                <button type="button" class="block">REVIEW</button>
+
+                <button type="button" class="block">BUY</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="col">
+                <h3>MOVIE FACTS</h3>
+            </div>
+
+            <div class="col">
+                <ul class="list-group">
+                    <li class="list-group-item">Release Date</li>
+                    <li class="list-group-item">Run Time</li>
+                    <li class="list-group-item">Box Office</li>
+                    <li class="list-group-item">Budget</li>
+                    <li class="list-group-item">⌘⎙</li>
+                  </ul>
+            </div>
+
+            <div class="col">
+                <h3>TRAILERS</h3>
+            </div>
+
+            <div class="col">
+                <ul class="list-group">
+                    <li class="list-group-item">Inception</li>
+                  </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
