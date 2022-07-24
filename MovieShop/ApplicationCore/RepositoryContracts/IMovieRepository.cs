@@ -9,10 +9,10 @@ namespace ApplicationCore.RepositoryContracts
 {
     public interface IMovieRepository
     {
-        List<Movie> GetTop30HighestRevenueMovies();
+        Task<List<Movie>> GetTop30HighestRevenueMovies();
 
-        List<Movie> GetTop30RatedMovies();
+        Task<List<Movie>> GetTop30RatedMovies();
 
-        Movie GetById(int id);
+        Task<Movie> GetById(int id);
     }
 }

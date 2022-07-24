@@ -2,10 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\MovieShop",
+    "\\MovieShop\\ApplicationCore",
+    "\\MovieShop\\ApplicationCore\\Models",
     "\\MovieShop\\MovieShopMVC",
     "\\MovieShop\\MovieShopMVC\\Views",
     "\\MovieShop\\MovieShopMVC\\Views\\Home"
   ],
-  "SelectedNode": "\\MovieShop\\MovieShopMVC\\Views\\Home\\Index.cshtml",
+  "SelectedNode": "\\MovieShop\\ApplicationCore\\Models\\MovieCardModel.cs",
   "PreviewInSolutionExplorer": false
 }
