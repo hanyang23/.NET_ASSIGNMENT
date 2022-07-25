@@ -12,5 +12,7 @@ namespace ApplicationCore.Models
         public string Name { get; set; }
         public string ProfilePath { get; set; }
         public string Character { get; set; }
+
+        public List<MovieCardModel> Movies { get; set; }
     }
 }
