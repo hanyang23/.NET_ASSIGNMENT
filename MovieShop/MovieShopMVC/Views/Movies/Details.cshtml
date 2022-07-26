@@ -2,96 +2,172 @@
 
 
 
-@{
-    ViewData["Title"] = "Movie details";
-}
+<div class="row">
+    <div class="container text-center">
+        <div class="row text-white bg-opacity-25" style="background-image: url('@Model.BackdropUrl');">
+            <div class="col">
+                <img src="@Model.PosterUrl" alt="poster"/>
+            </div>
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Movie Details</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-  </head>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <div class="container">
-      <div class="row">
-        <img src="..." class="img-fluid" alt="..."> <!--background photo-->
-        <div class="col">
-          <a href="https://image.tmdb.org/t/p/w342//9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg">
-            <img alt="Qries" src="https://image.tmdb.org/t/p/w342//9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg"
-            width=200" height="300"></a>
+            <div class="col-6" align="left">
+                <h1>
+                    @Model.Title
+                </h1>
+
+                <small class="text-muted">Overview of the movie</small>
+                <br>
+                <small class="text-muted">Time|Years &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</small>
+
+                <h6>
+                    @foreach (var genre in Model.Genres)
+                        {
+                            <span class="badge rounded-pill bg-secondary">@genre.Name</span>
+                        }
+                 </h6>
+
+                <h5><span class="badge bg-success" align="left">MovieRating</span></h5>
+
+                <p>
+                    @Model.Overview
+                </p>
+            </div>
+
+            <div class="col" align="right">
+                <br>
+                <div class="row">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModal">
+                        📓 REVIEW LALA
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <form>
+                              <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Recipient:</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                              </div>
+                              <div class="form-group">
+                                <label for="message-text" class="col-form-label">Message:</label>
+                                <textarea class="form-control" id="message-text"></textarea>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Send message</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                </div>
+                <br>
+
+                <div class="row">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#purchaseModal">
+                        BUY $@Model.Price
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="purchaseModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="ConfirmationModalLabel">CONFIRMATION</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h4>Please confirm your purchase</h4>
+                                    <h6>@Model.Title</h6>
+                                    <h6>@Model.Price</h6>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="col-6">
-          <h1>MovieTitle</h1>
-          <small class="text-muted">Overview of the movie</small>
-          <br><small class="text-muted">Time|Years &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</small>
-          <span class="badge rounded-pill bg-secondary">Genres1</span>
-          <span class="badge rounded-pill bg-secondary">Genres2</span>
-          <span class="badge rounded-pill bg-secondary">Genres3</span>
-          <br>
-          <br><span class="badge bg-success">Rating</span>
-          <br>
-          <br><p>Dom Cobb, a skilled thief who commits corporate espionage by infiltrating the subconscious of his targets, is offered a chance to regain his old life as payment for a task considered to be impossible: "inception", the implantation of another person's idea into a target's subconscious.</p>
-        </div>
-
-        <div class="col">
-          <button type="button" class="btn btn-primary">
-            📓<span class="badge bg-secondary">REVIEW</span>
-          </button>
-
-          <br>
-
-          <br><button type="button" class="btn btn-primary">
-            BUY<span class="badge bg-secondary">$9.90</span>
-          </button>
-          <!--popup confirmation page
-          <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
-            Tooltip on top
-          </button>
-          -->
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-3">
-          <br>
-          <h5>MOVIE FACTS</h5>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">📅 Release Date</li>
-            <li class="list-group-item">⌛ Run Time</li>
-            <li class="list-group-item">💵 Box Oiifce</li>
-            <li class="list-group-item">💲 Budget</li>
-            <li class="list-group-item">And a fifth one</li>
-            <h6>&emsp;☑ ☑</h6>
-          </ul>
-          <br>
-          <h5>TRAILERS</h5>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">▶ Inception</li>
-            <li class="list-group-item"></li>
-          </ul>
-        </div>
-
-        <div class="col-6">
-          <br>
-          <h5>CAST</h5>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">📅&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;CAST NAME&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Actor Name</li>
-            <li class="list-group-item">📅&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;CAST NAME&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Actor Name</li>
-            <li class="list-group-item">📅&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;CAST NAME&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Actor Name</li>
-            <li class="list-group-item">📅&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;CAST NAME&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Actor Name</li>
-            <li class="list-group-item">📅&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;CAST NAME&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Actor Name</li>
-            <li class="list-group-item">📅&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;CAST NAME&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Actor Name</li>
-            <li class="list-group-item">📅&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;CAST NAME&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Actor Name</li>
-            <li class="list-group-item">📅&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;CAST NAME&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Actor Name</li>
-            <li class="list-group-item">📅&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;CAST NAME&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Actor Name</li>
-            <li class="list-group-item">📅&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;CAST NAME&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Actor Name</li>
-          </ul>
-        </div>
-      </div>
-
     </div>
-</html>
+</div>
+<br>
+
+<div class="row">
+    <div class="col-5">
+        <h4>MOVIE FACTS</h4>
+        <hr>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+               📅 Release Date  <span class="badge rounded-pill bg-secondary">@Convert.ToString(string.Format("{0:MM/dd/yyyy}", Model.ReleaseDate))</span>
+            </li>
+            <li class="list-group-item">
+                ⌛ Run Time <span class="badge rounded-pill bg-secondary">@(Model.RunTime + "m")</span>
+            </li>
+            <li class="list-group-item">
+                💵 Box Office <span class="badge rounded-pill bg-secondary">@String.Format("{0:c}", Model.Revenue)</span>
+            </li>
+            <li class="list-group-item">
+                💲 Budget <span class="badge rounded-pill bg-secondary">@String.Format("{0:c}", Model.Budget)</span>
+            </li>
+            <li class="list-group-item">
+                <button type="button" class="btn btn-secondary btn-sm">☑</button>
+                <button type="button" class="btn btn-secondary btn-sm">☑</button>
+            </li>
+        </ul>
+        <br>
+
+        <h4>TRAILERS</h4>
+        <hr>
+        @foreach (var trailer in Model.Trailers)
+        {
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="background-color:whitesmoke">
+                    <span> ▶ @trailer.TrailerUrl</span>
+                </li>
+            </ul>
+        }
+    </div>
+
+    <div class="col">
+        <h4>CAST</h4><hr>
+
+        @foreach (var cast in Model.Casts)
+        {
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-2">
+                            <div>
+                                <a asp-controller="Casts" asp-action="Details" asp-route-id="@cast.Id">
+                                    <img src="@cast.ProfilePath" class="img-fluid" alt="@cast.Name" width="50" height="60" style="border-radius:50%; margin-bottom:15px;" />
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-5">
+                            @cast.Name
+                        </div>
+
+                        <div class="col-5">
+                            @cast.Character
+                        </div>
+                        <br><hr>
+                    </div>
+                </li>
+            </ul>
+        }
+    </div>
+</div>
