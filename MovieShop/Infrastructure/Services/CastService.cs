@@ -21,11 +21,18 @@ namespace Infrastructure.Services
         public async Task<CastModel> GetCastDetails(int castId)
         {
             var cast = await _castRepository.GetById(castId);
+
+            string gender;
+            if (cast.Gender == "1") gender = "Female";
+            else if (cast.Gender == "2") gender = "Male";
+            else gender = "Not available";
+
             var castDetails = new CastModel
             {
                 Id = cast.Id,
                 Name = cast.Name,
                 ProfilePath = cast.ProfilePath
+                Gender = gender
             };
 
             foreach (var movie in cast.MoviesOfCast)
