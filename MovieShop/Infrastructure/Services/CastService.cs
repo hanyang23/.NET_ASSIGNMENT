@@ -31,7 +31,7 @@ namespace Infrastructure.Services
             {
                 Id = cast.Id,
                 Name = cast.Name,
-                ProfilePath = cast.ProfilePath
+                ProfilePath = cast.ProfilePath,
                 Gender = gender
             };
 
