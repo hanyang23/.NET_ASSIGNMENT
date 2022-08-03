@@ -5,9 +5,11 @@ VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieShopMVC", "MovieShopMVC\MovieShopMVC.csproj", "{3BE6BA65-02D0-41D7-A3A8-2213F5E1EA43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationCore", "ApplicationCore\ApplicationCore.csproj", "{E2992B98-0A1B-46FE-864B-410929D884EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationCore", "ApplicationCore\ApplicationCore.csproj", "{E2992B98-0A1B-46FE-864B-410929D884EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{D1781BE9-59DB-43A5-B436-327E167EAEA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{D1781BE9-59DB-43A5-B436-327E167EAEA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieShopAPI", "MovieShopAPI\MovieShopAPI.csproj", "{C1DCE05E-34FF-4DFC-A783-0EFC91B586F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{D1781BE9-59DB-43A5-B436-327E167EAEA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1781BE9-59DB-43A5-B436-327E167EAEA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1781BE9-59DB-43A5-B436-327E167EAEA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1DCE05E-34FF-4DFC-A783-0EFC91B586F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1DCE05E-34FF-4DFC-A783-0EFC91B586F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1DCE05E-34FF-4DFC-A783-0EFC91B586F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1DCE05E-34FF-4DFC-A783-0EFC91B586F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

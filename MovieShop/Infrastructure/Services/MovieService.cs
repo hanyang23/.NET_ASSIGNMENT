@@ -22,6 +22,11 @@ namespace Infrastructure.Services
         {
             var movieDetails = await _movieRepository.GetById(movieId);
 
+            if(movieDetails == null)
+            {
+                return null;
+            }
+
             var movieDetailsModel = new MovieDetailsModel
             {
                 Id = movieDetails.Id,

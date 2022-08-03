@@ -12,6 +12,7 @@ namespace ApplicationCore.ServiceContracts
         Task<bool> CreateUser(UserRegisterModel model);
 
         Task<UserInfoResponseModel> ValidateUser(UserLoginModel model);
+        Task<UserEmailModel> CheckEmail(string email);
 
     }
 }
