@@ -15,17 +15,17 @@ namespace Infrastructure.Data
         {
 
         }
-
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Trailer> Trailers { get; set; }
-        public DbSet<MovieGenre> MovieGenres { get; set; }
+        public DbSet<MovieGenre> movieGenres { get; set; }
         public DbSet<Cast> Casts { get; set; }
-        public DbSet<MovieCast> MovieCasts { get; set; }
+        public DbSet<MovieCast> movieCasts { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<Review> Reviews { get; set; }
+        public DbSet<Purchase> Purchases { get; set; }
         public DbSet<Favorite> Favorite { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -39,6 +39,15 @@ namespace Infrastructure.Data
             modelBuilder.Entity<UserRole>(ConfigureUserRole);
             modelBuilder.Entity<Review>(ConfigureReview);
             modelBuilder.Entity<Favorite>(ConfigureFavorite);
+            modelBuilder.Entity<Purchase>(ConfigurePurchase);
+        }
+
+        private void ConfigurePurchase(EntityTypeBuilder<Purchase> builder)
+        {
+            builder.HasKey(p => p.Id);
+            //builder.HasKey(p => new { p.UserId, p.MovieId});
+            builder.Property(p => p.PurchaseNumber).ValueGeneratedOnAdd();
+            builder.Property(p => p.TotalPrice).HasColumnType("decimal(5, 2)");
         }
 
         private void ConfigureFavorite(EntityTypeBuilder<Favorite> builder)
@@ -91,6 +100,7 @@ namespace Infrastructure.Data
             builder.Property(c => c.Gender).HasMaxLength(16);
             builder.Property(c => c.ProfilePath).HasMaxLength(2084);
             builder.Property(c => c.TmdbUrl).HasMaxLength(2084);
+
         }
 
         private void ConfigureMovieGenre(EntityTypeBuilder<MovieGenre> builder)
@@ -126,5 +136,6 @@ namespace Infrastructure.Data
             builder.HasIndex(m => m.Revenue);
             builder.HasIndex(m => m.Budget);
         }
+
     }
 }

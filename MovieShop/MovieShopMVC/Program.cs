@@ -2,6 +2,7 @@ using ApplicationCore.RepositoryContracts;
 using ApplicationCore.ServiceContracts;
 using Infrastructure.Data;
 using Infrastructure.Repositories;
+using Infrastructure.Repository;
 using Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
@@ -16,9 +17,15 @@ builder.Services.AddScoped<IMovieService, MovieService>();
 builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 builder.Services.AddScoped<IGenreRepository, GenreRepository>();
 builder.Services.AddScoped<IGenreService, GenreService>();
+builder.Services.AddScoped<ICastRepository, CastRepository>();
+builder.Services.AddScoped<ICastService, CastService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<ICurrentUser, CurrentUser>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IPurchaseRepository, PurchaseRepository>();
+builder.Services.AddScoped<IFavoriteRepository, FavoriteRepository>();
+builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
 
 builder.Services.AddHttpContextAccessor();
 

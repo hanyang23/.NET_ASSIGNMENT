@@ -72,3 +72,5 @@ C:\Users\12243\Documents\GitHub\.NET_Assignment\.NET_ASSIGNMENT\MovieShop\MovieS
 C:\Users\12243\Documents\GitHub\.NET_Assignment\.NET_ASSIGNMENT\MovieShop\MovieShopAPI\obj\Debug\net6.0\MovieShopAPI.pdb
 C:\Users\12243\Documents\GitHub\.NET_Assignment\.NET_ASSIGNMENT\MovieShop\MovieShopAPI\obj\Debug\net6.0\MovieShopAPI.genruntimeconfig.cache
 C:\Users\12243\Documents\GitHub\.NET_Assignment\.NET_ASSIGNMENT\MovieShop\MovieShopAPI\obj\Debug\net6.0\ref\MovieShopAPI.dll
+C:\Users\12243\Documents\GitHub\.NET_Assignment\.NET_ASSIGNMENT\MovieShop\MovieShopAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\12243\Documents\GitHub\.NET_Assignment\.NET_ASSIGNMENT\MovieShop\MovieShopAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

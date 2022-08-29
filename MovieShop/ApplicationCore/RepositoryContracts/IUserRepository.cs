@@ -10,6 +10,8 @@ namespace ApplicationCore.RepositoryContracts
     public interface IUserRepository
     {
         Task<User> GetUserByEmail(string email);
+
         Task<User> AddUser(User user);
+        Task<User> GetUserById(int id);
     }
 }
